@@ -1,0 +1,88 @@
+.home-container {
+  display: flex;
+  padding-top: 7rem;
+  width: 100%;
+  gap: 0.5rem;
+  height: 300px;
+}
+
+.social-media {
+  width: calc(100% - 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+.social-media > small {
+  cursor: pointer;
+  padding: 0.3rem;
+}
+.social-media > small:hover {
+  color: red;
+  transition: all 03s ease;
+}
+.my-profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 50%);
+  gap: 0.5rem;
+}
+.introduction h4 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: -0.5rem;
+}
+.introduction h6 {
+  position: absolute;
+  gap: 0rem;
+  margin-top: -1rem;
+  padding: 0;
+}
+.my-intro {
+  font-size: 12px;
+  font-weight: 700;
+  color: #800000;
+}
+.contactMe {
+  height: fit-content;
+  width: fit-content;
+  padding: 0.3rem;
+  border: 1px solid white;
+  background: violet;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.contactMe-btn {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.forward {
+  font-size: 10px;
+}
+
+.my-image {
+  width: calc(100% - 60%);
+}
+
+.cv-image {
+  height: 170px;
+  width: 170px;
+  object-fit: fill;
+  border-radius: 50%;
+  border: 4px solid white;
+  transition: border 0.3s ease-in-out;
+
+  /* Stylish hover effect */
+  &:hover {
+    border: 4px solid #e74c3c;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

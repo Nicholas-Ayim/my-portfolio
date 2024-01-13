@@ -1,0 +1,33 @@
+.links-container-darkMode {
+  padding: 1rem;
+  color: white;
+}
+.dark-mode {
+  color: #ffd700;
+}
+.links-container-no-darkMode {
+  color: black;
+  padding: 1rem;
+}
+.right-links {
+  float: right;
+  display: flex;
+  gap: 1rem;
+}
+.no-decoration {
+  text-decoration: none;
+}
+.dark-mode {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 18px;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem;
+}
+.dark-mode:hover {
+  color: lightblue;
+  transform: scale(0.8);
+}
