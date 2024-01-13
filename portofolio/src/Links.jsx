@@ -15,7 +15,7 @@ export default function Links() {
 
   return (
     <div
-      className={`${!darkMode} ? "links-container-darkMode" : "links-container-no-darkMode"`}
+      className={` header-container ${!darkMode} ? "links-container-darkMode" : "links-container-no-darkMode"`}
     >
       <Link to="/" className="no-decoration">
         Home

@@ -1,14 +1,11 @@
 .white {
-  height: 100vh;
   width: 100%;
-  /* border: 1px solid black; */
   background-color: #f5f5dc;
   color: black;
+  padding: 0.5rem;
 }
 .black {
-  height: 100vh;
   width: 100%;
-  /* border: 1px solid white; */
   background-color: black;
   color: white;
 }

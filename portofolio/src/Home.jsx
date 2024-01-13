@@ -11,31 +11,18 @@ import {
   FaForward
 } from "react-icons/fa";
 export default function Home() {
-  const intro = [
-    "As a MERN stack full-stack developer, I bring passion and expertise to every project. With a solid foundation in MongoDB, Express.js, React, and Node.js, I craft dynamic and efficient web applications. My commitment to clean code and innovative solutions ensures seamless user experiences. Let's collaborate to turn ideas into impactful digital solutions."
-  ];
-  const [currentWord, setCurrentWord] = useState("");
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const words = intro[0].split(" ");
-
-    const interval = setInterval(() => {
-      if (wordIndex < words.length) {
-        setCurrentWord((prev) => prev + " " + words[wordIndex]);
-        setWordIndex((prevIndex) => prevIndex + 1);
-      } else {
-        clearInterval(interval);
-      }
-    }, 300);
-
-    return () => clearInterval(interval);
-  }, [wordIndex]);
-
   const myName = ["Hello , I am Nicholas Ayim"];
   const [name, setName] = useState("");
   const [countWord, setCountWord] = useState(0);
 
+  //loading structure
+  const [animationLoaded, setAnimationLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [socialLoaded, setSocialLoaded] = useState(false);
+
+  const intro = [
+    ". As MERN stack full-stack developer, I bring passion and expertise to every project. With a solid foundation in MongoDB, Express.js, React, and Node.js, I craft dynamic and efficient web applications. My commitment to clean code and innovative solutions ensures seamless user experiences. Let's collaborate to turn ideas into impactful digital solutions."
+  ];
   useEffect(() => {
     const words = myName[0].split(" ");
     const interval = setInterval(() => {
@@ -43,55 +30,91 @@ export default function Home() {
         setName((prevName) => prevName + " " + words[countWord]);
         setCountWord((prevCountWord) => prevCountWord + 1);
       } else {
+        introduction(intro);
+
         clearInterval(interval);
       }
-    }, 3000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [countWord]);
 
+  const [currentWord, setCurrentWord] = useState("");
+  // const [wordIndex, setWordIndex] = useState(0);
+
+  async function introduction(intro) {
+    const words = intro[0].split(" ");
+
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < words.length) {
+        setCurrentWord((prev) => prev + " " + words[i]);
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 300);
+
+    // Clear the interval when all words are processed
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        clearInterval(interval);
+        resolve();
+        setAnimationLoaded(true);
+      }, 300 * words.length);
+    });
+    if (animationLoaded) {
+      setImageLoaded(true);
+      console.log("social");
+    }
+    setSocialLoaded(true);
+  }
+
   return (
     <>
       <div className="home-container">
-        <div className="social-media">
-          <small>
-            <FaLinkedinIn />
-          </small>
-          <small>
-            <FaYoutube />
-          </small>
-          <small>
-            <FaWhatsapp />
-          </small>
-          <small>
-            <FaTelegram />
-          </small>
-          <small>
-            <FaTwitter />
-          </small>
-          <small>
-            <FaFacebook />
-          </small>
+        <div className="my-name-intro">
+          <h5 className="my-name">{name}</h5>
         </div>
-        <div className="my-profile">
-          <div className="introduction">
-            <h4>{name}</h4>
-            <h6>MERN STACK DEVELOPER</h6>
+        <div className="sub-intro">
+          {currentWord && <h6 className="career-intro">{currentWord}</h6>}
+        </div>
+        {animationLoaded && (
+          <div className="portfolio-image">
+            <img
+              className="cv-image"
+              src={image}
+              onLoad={() => setImageLoaded(true)}
+            />
           </div>
-          <div className="intro-words">
-            <small className="my-intro">{currentWord}</small>
-          </div>
-          <div className="contactMe">
-            <button className="contactMe-btn">Contact Me</button>
-            <small className="forward">
-              {" "}
-              <FaForward />
+        )}
+        {imageLoaded && (
+          <div className="social-media">
+            <small>
+              <FaLinkedinIn />
+            </small>
+            <small>
+              <FaYoutube />
+            </small>
+            <small>
+              <FaWhatsapp />
+            </small>
+            <small>
+              <FaTelegram />
+            </small>
+            <small>
+              <FaTwitter />
+            </small>
+            <small>
+              <FaFacebook />
             </small>
           </div>
-        </div>
-        <div className="my-image">
-          <img src={image} className="cv-image" />
-        </div>
+        )}
+        {socialLoaded && (
+          <div className="contactMe">
+            <small>contact</small>
+          </div>
+        )}
       </div>
     </>
   );
