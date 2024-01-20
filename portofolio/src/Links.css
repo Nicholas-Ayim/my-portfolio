@@ -1,6 +1,6 @@
 .header-container {
   background-color: #00bfff; /* Deep Sky Blue */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Set your desired box shadow */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -10,10 +10,22 @@
   color: white;
 }
 .dark-mode {
-  color: black;
+  color: lightblue;
+  animation: darkMode 2s infinite;
+}
+@keyframes darkMode {
+  0% {
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .links-container-no-darkMode {
-  color: black;
+  color: #00bfff;
 }
 .right-links {
   float: right;
@@ -29,14 +41,7 @@
 }
 .dark-mode {
   cursor: pointer;
-  outline: none;
-  border: none;
-  background-color: none;
   font-size: 18px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-.dark-mode:hover {
-  color: lightblue;
-  transform: scale(1.05);
+  background: none;
+  border: none;
 }

@@ -1,75 +1,125 @@
-.home-container {
-  height: 100vh;
-  width: 100%;
+@media screen and (min-width: 100px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .background-container {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    background-image: url("./assets/background2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    overflow-x: hidden;
+  }
+  .visible {
+    opacity: 0.2;
+  }
+  .show {
+    opacity: 1;
+  }
+
+  .sub-intro {
+    padding-top: 1rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .my-name {
+    font-size: 20px;
+    font-weight: 700;
+    word-spacing: 0.3rem;
+    font-size: 22px;
+  }
+  /* home.css */
+  .career-intro {
+    font-size: 15px;
+    word-spacing: 2px;
+    color: white; /* Dark Gray */
+    font-weight: 800;
+  }
+  .career-intro::after {
+    content: ""; /* Insertion point character */
+    display: inline-block;
+    height: 21px;
+    width: 20px;
+    border-radius: 100%;
+    background: orange;
+    font-size: 1.5em;
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: loading 3s infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: scale(0.4);
+    }
+    50% {
+      transform: scale(0.6);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .drop-down-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+  }
+  .drop-down-container > small:nth-child(3) {
+    margin-top: -0.7rem;
+  }
+  .drop-down-container > small:nth-child(2) {
+    margin-top: -0.7rem;
+  }
+  .drop-page {
+    font-weight: 800;
+    font-size: 24px;
+    color: red;
+  }
+
+  .drop-page1 {
+    cursor: pointer;
+    animation: dropping1 1s infinite;
+  }
+  @keyframes dropping1 {
+    0% {
+      transform: scale(0.4);
+    }
+  }
+  .drop-page2 {
+    animation: dropping2 2s infinite;
+  }
+  @keyframes dropping2 {
+    50% {
+      transform: scale(0.8);
+    }
+  }
+  .drop-page3 {
+    animation: dropping3 3s infinite;
+  }
+  @keyframes dropping3 {
+    100% {
+      transform: scale(1.2);
+    }
+  }
+}
+.contact-page {
+  padding-top: 7.5rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
 }
-.cv-image {
-  height: 150px;
-  width: 150px;
-  object-fit: fill;
-  border-radius: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  border: 1px solid #eee;
-}
-.my-name {
-  font-size: 20px;
-  font-weight: 700;
-}
-/* home.css */
-.career-intro {
-  font-size: 13px;
-  word-spacing: 1px;
-  color: #555; /* Dark Gray */
-  font-weight: 800;
-}
-.career-intro::after {
-  content: ""; /* Insertion point character */
-  display: inline-block;
-  height: 21px;
-  width: 20px;
-  border-radius: 100%;
-  background: orange;
-  font-size: 1.5em;
-  margin-left: 4px;
-  vertical-align: middle;
-  animation: loading 3s infinite;
-}
-
-@keyframes loading {
-  0% {
-    transform: scale(0.4);
-  }
-  50% {
-    transform: scale(0.6);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.social-media {
-  display: flex;
-  gap: 1rem;
-}
-.social-media > small:hover {
-  color: red;
+.navigate-contact {
+  padding: 0.3rem;
   cursor: pointer;
-}
-
-.contactMe {
-  cursor: pointer;
-  height: fit-content;
-  width: fit-content;
-  padding: 0.5rem;
-  background-color: #faceda;
-  border-radius: 10px;
-}
-.contactMe:hover {
-  background-color: green;
-  transition: all 0.3s ease;
 }

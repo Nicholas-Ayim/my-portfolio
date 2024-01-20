@@ -1,0 +1,38 @@
+.slider-container {
+  padding-top: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10vh;
+}
+.slider {
+  width: 50%;
+  background: none;
+  outline: none;
+}
+.motivator-container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.motivator-image {
+  height: 70px;
+  width: 70px;
+  object-fit: fill;
+  border-radius: 100%;
+}
+
+.motivators-words {
+  color: #3498db; /* Calm blue for the quote text */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.motivator-name {
+  color: #1f618d; /* Slightly darker shade of blue for the author's name */
+  font-size: 16px;
+  font-style: italic;
+}
